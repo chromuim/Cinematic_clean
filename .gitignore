@@ -1,9 +1,32 @@
 *.iml
 .gradle
 /local.properties
-/.idea/
 
 .DS_Store
-/build
 /captures
 .externalNativeBuild
+
+*.apk
+#*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+
+# Windows thumbnail db
+Thumbs.db
+
+# Android Studio
+.idea
+build/
+#NDK
+#obj/
+/gradle.properties
