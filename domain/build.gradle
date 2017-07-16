@@ -1,7 +1,16 @@
 apply plugin: 'java'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    def domainTestDep = rootProject.ext.domainTestDependencies
+    def domainDep = rootProject.ext.domainDependencies
+
+    compile domainDep.rxAndroid
+    compile domainDep.rxJava
+    compile domainDep.guava
+
+    testCompile domainTestDep.junit
+    testCompile domainTestDep.mockito
+    testCompile domainTestDep.assertj
 }
 
 sourceCompatibility = "1.7"
