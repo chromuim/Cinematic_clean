@@ -1,0 +1,42 @@
+allprojects {
+    repositories {
+        jcenter()
+//        mavenCentral()
+    }
+}
+
+ext {
+    //region Android
+    //endregion
+
+    //region Libraries
+    rxAndroidVer = '2.0.1'
+    guavaVer = '22.0-android'
+    supportLibVer = '25.3.1'
+    //endregion
+
+    //region Testing
+    jUnitVer = '4.12'
+    mockitoVer = '1.10.19'
+    assertjVer = '2.8.0'
+    //endregion
+
+    //region Dev
+    //endregion
+
+    //region Domain Layer Dependencies
+    domainDependencies = [
+            rxAndroid  : "io.reactivex.rxjava2:rxandroid:${rxAndroidVer}",
+            rxJava     : "io.reactivex.rxjava2:rxjava:${rxAndroidVer}",
+            guava      : "com.google.guava:guava:${guavaVer}",
+    ]
+
+    domainTestDependencies = [
+            junit  : "junit:junit:${jUnitVer}",
+            mockito: "org.mockito:mockito-core:${mockitoVer}",
+            assertj: "org.assertj:assertj-core:${assertjVer}",
+    ]
+
+    //endregion
+
+}
