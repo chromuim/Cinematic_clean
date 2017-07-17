@@ -32,6 +32,7 @@ public abstract class UseCase<T, Params> {
         .subscribeOn(Schedulers.from(mOnBackgroundExecutor))
         .observeOn(mOnMainThreadExecutor.getScheduler());
 
+    addDisposable(observable.subscribeWith(disposableObserver));
 
   }
 
