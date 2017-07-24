@@ -13,6 +13,7 @@ ext {
     rxAndroidVer = '2.0.1'
     guavaVer = '22.0-android'
     supportLibVer = '25.3.1'
+    javaInjectVer = '1'
     //endregion
 
     //region Testing
@@ -28,6 +29,7 @@ ext {
     domainDependencies = [
             rxAndroid  : "io.reactivex.rxjava2:rxandroid:${rxAndroidVer}",
             rxJava     : "io.reactivex.rxjava2:rxjava:${rxAndroidVer}",
+            javaInject : "javax.inject:javax.inject:${javaInjectVer}",
             guava      : "com.google.guava:guava:${guavaVer}",
     ]
 
