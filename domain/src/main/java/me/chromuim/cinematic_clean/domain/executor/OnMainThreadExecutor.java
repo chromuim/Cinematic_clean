@@ -5,5 +5,4 @@ import io.reactivex.Scheduler;
 public interface OnMainThreadExecutor {
 
   Scheduler getScheduler();
-
 }
