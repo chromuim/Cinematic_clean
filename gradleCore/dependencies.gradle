@@ -7,6 +7,12 @@ allprojects {
 
 ext {
     //region Android
+    compileSdk = 26
+    buildTools = '26.0.0'
+    minSdk = 23
+    targetSdk = 26
+    androidVersionCode = 1
+    androidVersionName = "1.0"
     //endregion
 
     //region Libraries
@@ -14,6 +20,7 @@ ext {
     guavaVer = '22.0-android'
     supportLibVer = '25.3.1'
     javaInjectVer = '1'
+    retrofit = '2.3.0'
     //endregion
 
     //region Testing
@@ -27,10 +34,9 @@ ext {
 
     //region Domain Layer Dependencies
     domainDependencies = [
-            rxAndroid  : "io.reactivex.rxjava2:rxandroid:${rxAndroidVer}",
-            rxJava     : "io.reactivex.rxjava2:rxjava:${rxAndroidVer}",
-            javaInject : "javax.inject:javax.inject:${javaInjectVer}",
-            guava      : "com.google.guava:guava:${guavaVer}",
+            rxJava    : "io.reactivex.rxjava2:rxjava:${rxAndroidVer}",
+            javaInject: "javax.inject:javax.inject:${javaInjectVer}",
+            guava     : "com.google.guava:guava:${guavaVer}",
     ]
 
     domainTestDependencies = [
@@ -38,7 +44,16 @@ ext {
             mockito: "org.mockito:mockito-core:${mockitoVer}",
             assertj: "org.assertj:assertj-core:${assertjVer}",
     ]
+    //endregion
 
+    //region Data Layer Dependencies
+    dataDependencies = [
+            retrofit      : "com.squareup.retrofit2:retrofit:${retrofit}",
+            retrofitRxJava: "com.squareup.retrofit2:adapter-rxjava:${retrofit}",
+            gson          : "com.squareup.retrofit2:converter-gson:${retrofit}"
+    ]
+
+    dataTestDependencies = []
     //endregion
 
 }

@@ -1,4 +1,4 @@
-package me.chromuim.cinematic_clean.domain;
+package me.chromuim.cinematic_clean.domain.model;
 
 import java.util.Objects;
 

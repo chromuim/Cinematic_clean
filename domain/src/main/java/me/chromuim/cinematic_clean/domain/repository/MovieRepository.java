@@ -2,7 +2,7 @@ package me.chromuim.cinematic_clean.domain.repository;
 
 import io.reactivex.Observable;
 import java.util.List;
-import me.chromuim.cinematic_clean.domain.Movie;
+import me.chromuim.cinematic_clean.domain.model.Movie;
 
 public interface MovieRepository {
 

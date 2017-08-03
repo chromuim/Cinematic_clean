@@ -3,7 +3,7 @@ package me.chromuim.cinematic_clean.domain.interactor;
 import io.reactivex.Observable;
 import java.util.List;
 import javax.inject.Inject;
-import me.chromuim.cinematic_clean.domain.Movie;
+import me.chromuim.cinematic_clean.domain.model.Movie;
 import me.chromuim.cinematic_clean.domain.executor.OnBackgroundExecutor;
 import me.chromuim.cinematic_clean.domain.executor.OnMainThreadExecutor;
 import me.chromuim.cinematic_clean.domain.repository.MovieRepository;
