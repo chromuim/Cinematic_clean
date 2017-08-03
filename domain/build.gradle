@@ -4,7 +4,6 @@ dependencies {
     def domainTestDep = rootProject.ext.domainTestDependencies
     def domainDep = rootProject.ext.domainDependencies
 
-    compile domainDep.rxAndroid
     compile domainDep.rxJava
     compile domainDep.guava
     compile domainDep.javaInject

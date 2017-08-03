@@ -3,6 +3,7 @@ package me.chromuim.cinematic_clean.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import me.chromuim.cinematic_clean.domain.model.Movie;
 import org.junit.Before;
 import org.junit.Test;
 
