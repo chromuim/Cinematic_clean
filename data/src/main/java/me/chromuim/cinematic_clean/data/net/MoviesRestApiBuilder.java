@@ -1,4 +1,4 @@
-package me.chromuim.cinematic_clean.data.repository.net;
+package me.chromuim.cinematic_clean.data.net;
 
 import me.chromuim.cinematic_clean.data.BuildConfig;
 import okhttp3.HttpUrl;

@@ -1,3 +1,6 @@
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+
 buildscript {
     repositories {
         mavenCentral()
@@ -6,10 +9,6 @@ buildscript {
         classpath 'me.tatarka:gradle-retrolambda:3.7.0'
     }
 }
-
-apply plugin: 'com.android.library'
-apply plugin: 'me.tatarka.retrolambda'
-//apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdk
@@ -46,4 +45,5 @@ dependencies {
     compile dep.retrofit
     compile dep.retrofitRxJava
     compile dep.gson
+    compile dep.rxJava
 }

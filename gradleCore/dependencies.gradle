@@ -1,14 +1,17 @@
 allprojects {
     repositories {
         jcenter()
-//        mavenCentral()
+        maven {
+            url "https://maven.google.com"
+        }
+//        google()
     }
 }
 
 ext {
     //region Android
     compileSdk = 26
-    buildTools = '26.0.0'
+    buildTools = "26.0.1"
     minSdk = 23
     targetSdk = 26
     androidVersionCode = 1
@@ -18,9 +21,12 @@ ext {
     //region Libraries
     rxAndroidVer = '2.0.1'
     guavaVer = '22.0-android'
-    supportLibVer = '25.3.1'
     javaInjectVer = '1'
     retrofit = '2.3.0'
+    daggerCompiler = '2.11'
+    butterKnife = '8.8.1'
+    supportLib = '26.0.2'
+    rxJava = '2.0.1'
     //endregion
 
     //region Testing
@@ -30,6 +36,8 @@ ext {
     //endregion
 
     //region Dev
+    devDep = []
+
     //endregion
 
     //region Domain Layer Dependencies
@@ -50,10 +58,23 @@ ext {
     dataDependencies = [
             retrofit      : "com.squareup.retrofit2:retrofit:${retrofit}",
             retrofitRxJava: "com.squareup.retrofit2:adapter-rxjava:${retrofit}",
-            gson          : "com.squareup.retrofit2:converter-gson:${retrofit}"
+            gson          : "com.squareup.retrofit2:converter-gson:${retrofit}",
+            rxJava        : "io.reactivex.rxjava2:rxjava:${rxJava}"
     ]
 
     dataTestDependencies = []
+    //endregion
+
+    //region Presentation Layer Dependencies
+    presentaionDependencies = [
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerCompiler}",
+            dagger             : "com.google.dagger:dagger:${daggerCompiler}",
+            butterKnife        : "com.jakewharton:butterknife:${butterKnife}",
+            butterKnifeCompiler: "com.jakewharton:butterknife-compiler:${butterKnife}",
+            appCompat          : "com.android.support:appcompat-v7:${supportLib}",
+            recyclerView       : "com.android.support:recyclerview-v7:${supportLib}",
+    ]
+    presentationTestDependencies = []
     //endregion
 
 }
