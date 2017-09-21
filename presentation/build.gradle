@@ -1,29 +1,39 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    compileSdkVersion rootProject.ext.compileSdk
+    buildToolsVersion rootProject.ext.buildTools
     defaultConfig {
         applicationId "me.chromuim.cinematic_clean"
-        minSdkVersion 23
-        targetSdkVersion 26
+        minSdkVersion rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.compileSdk
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:26.+'
-    testCompile 'junit:junit:4.12'
+    def presentationDep = rootProject.ext.presentaionDependencies
+    def presentationTestDep = rootProject.ext.presentationTestDependencies
+
+    def devDep = rootProject.ext.devDep
+
+    compile project(':domain')
+    compile project(':data')
+
+    annotationProcessor presentationDep.daggerCompiler
+    compile presentationDep.dagger
+
+    compile presentationDep.butterKnife
+    annotationProcessor presentationDep.butterKnife
+
+    compile presentationDep.appCompat
+    compile presentationDep.recyclerView
 }

@@ -1,4 +1,4 @@
-package me.chromuim.cinematic_clean.data.repository.entity;
+package me.chromuim.cinematic_clean.data.entity;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
