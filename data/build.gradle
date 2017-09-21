@@ -46,4 +46,9 @@ dependencies {
     compile dep.retrofitRxJava
     compile dep.gson
     compile dep.rxJava
+    compile dep.javaInject
+
+
+    testCompile depTest.junit
+    testCompile depTest.mockito
 }

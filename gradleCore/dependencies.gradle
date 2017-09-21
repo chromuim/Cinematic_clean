@@ -27,6 +27,7 @@ ext {
     butterKnife = '8.8.1'
     supportLib = '26.0.2'
     rxJava = '2.0.1'
+    javaxInject = '1'
     //endregion
 
     //region Testing
@@ -59,10 +60,15 @@ ext {
             retrofit      : "com.squareup.retrofit2:retrofit:${retrofit}",
             retrofitRxJava: "com.squareup.retrofit2:adapter-rxjava:${retrofit}",
             gson          : "com.squareup.retrofit2:converter-gson:${retrofit}",
-            rxJava        : "io.reactivex.rxjava2:rxjava:${rxJava}"
+            rxJava        : "io.reactivex.rxjava2:rxjava:${rxJava}",
+            javaInject    : "javax.inject:javax.inject:${javaxInject}"
     ]
 
-    dataTestDependencies = []
+    dataTestDependencies = [
+            junit  : "junit:junit:${jUnitVer}",
+            mockito: "org.mockito:mockito-core:${mockitoVer}",
+
+    ]
     //endregion
 
     //region Presentation Layer Dependencies
